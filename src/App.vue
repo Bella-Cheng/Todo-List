@@ -15,12 +15,8 @@ import {ref} from 'vue'
 const todoInput = ref("")
 const todoList = ref([])
 
-
-
-
-
 function addButton(){
-  if(todoInput.value != ""){
+  if( todoInput.value != "" ){
     todoList.value.push({
     text:todoInput.value,
     edit:false,
@@ -42,11 +38,20 @@ function addButton(){
         <button @click="addButton" type="button" class="btn btn-soft btn-primary p-[12px]">新增</button>
       </div>
       <div class="border-b-1 mt-20 mb-8"></div>
-      <div v-for="(item, id) in todoList" :key="id" class="flex justify-center items-center w-full mb-8">
-        <input type="checkbox" name="checkbox" id="" class="checkbox checkbox-primary"/>
-        <p class="p-[12px] w-[70%]">{{ item.text }}</p>
-        <button class="after:content-['｜'] after:ml-2" type="button"><i class="fa-solid fa-pen p-[12px]"></i>修改</button>
-        <button><i class="fa-solid fa-trash p-[12px]" type="button"></i>刪除</button>
+      <div v-for="(item, id) in todoList" :key="id" class="flex justify-center items-center w-full py-4"
+      :class="{ 'bg-gray-400 text-white': item.done }">
+        <input @change="item.done = !item.done" type="checkbox" name="checkbox" id="" class="checkbox checkbox-neutral"/>
+        <p class="p-[12px] w-[70%]" :class="{ 'line-through': item.done }">{{ item.text }}</p>
+
+        <button class=" hover:text-indigo-500 cursor-pointer p-[12px]" type="button">
+          <i class="fa-solid fa-pen"></i>
+          <span class="after:content-['｜'] after:ml-5">修改</span>
+        </button>
+
+        <button class="hover:text-pink-600 cursor-pointer p-[12px] flex items-center" type="button">
+          <i class="fa-solid fa-trash mr-2 " type="button"></i>
+          <span>刪除</span>
+        </button>
       </div>
     </div>
  </div>
