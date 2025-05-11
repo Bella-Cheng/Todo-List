@@ -52,7 +52,17 @@ function updateEdit(){
 <template>
   <div class="bg-[#fcf1f7] w-screen h-screen ">
     <div class="max-w-5xl m-auto bg-[#FFFFFF] p-[12px]">
-      <h1 class="text-3xl font-bold text-center p-[50px] ">代辦清單 ToDo</h1>
+      <div class="flex w-full justify-center items-center mb-6">
+        <div class="w-[10%]">
+          <img class="w-full" src="./icon-book.png" alt="logo">
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold text-center py-[50px] ">代辦清單 ToDo
+          </h1>
+        </div>
+      </div>
+
+      
       <div class="text-center w-full">
         <input v-model="todoInput" class="w-[70%] p-[12px] border rounded-4xl mx-8 border-gray-700  focus:border-pink-600" type="text" placeholder="輸入文字"/>
         <button @click="addButton" type="button" class="btn btn-soft btn-primary p-[12px]">新增</button>
