@@ -39,8 +39,8 @@ function updateEdit(){
 </script>
 
 <template>
-  <div class="bg-[#fcf1f7] min-h-screen w-full px-4">
-    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow mt-8">
+  <div class="w-full px-4">
+    <div class="max-w-4xl mx-auto bg-[#e7e0f0] p-6 rounded-lg shadow mt-8">
       
       <div class="flex items-center justify-center mb-6">
         <img src="./icon-book.png" alt="logo" class="w-10 h-10 mr-4" />
